@@ -5,7 +5,7 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: "https://sauce-demo.myshopify.com/",
+    baseUrl: "https://practicesoftwaretesting.com/",
     viewportHeight: 1080,
     viewportWidth: 1920,
     video: true,
