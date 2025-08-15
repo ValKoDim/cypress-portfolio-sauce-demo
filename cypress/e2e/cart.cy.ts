@@ -1,4 +1,5 @@
 import HomePage from "../page-objects/HomePage";
+import ProductPage from "../page-objects/ProductPage";
 
 describe('Core functionality of the cart', ( ) => {
     const baseUrl = Cypress.config('baseUrl');
@@ -8,12 +9,11 @@ describe('Core functionality of the cart', ( ) => {
     });
     it('should add an item to the cart', () => {
         HomePage.getProductByName('Combination Pliers')
-            .should('be.visible')
             .click();
         
-        cy.get('[data-test="add-to-cart"]')
-            .should('be.visible')
-            .should('not.be.disabled')
+        ProductPage.isVisible();
+        
+        ProductPage.elements.getAddtoCartButton()
             .click();
         
         cy.get('[data-test="cart-quantity"]')

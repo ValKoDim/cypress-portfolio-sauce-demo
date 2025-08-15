@@ -22,7 +22,8 @@ class HomePage {
     getProductByName(name: string) {
     return cy.get('[data-test="product-name"]')
       .filter((index, el) => el.textContent?.trim() === name)
-      .closest('a.card');
+      .closest('a.card')
+      .should('be.visible');
     }
 }
 
