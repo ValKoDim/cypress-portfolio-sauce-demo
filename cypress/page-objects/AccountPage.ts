@@ -1,4 +1,8 @@
+import { Navbar } from "../components/Navbar";
+
 class AccountPage {
+    navbar = new Navbar();
+    
     elements = {
         getPageTitle: () => cy.get('[data-test="page-title"]'),
         getOptionsMenu: () => cy.get('div.btn-group-vertical'),

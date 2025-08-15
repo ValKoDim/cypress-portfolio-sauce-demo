@@ -1,4 +1,8 @@
+import { Navbar } from "../components/Navbar";
+
 class LoginPage {
+    navbar = new Navbar();
+    
     elements = {
         getEmailInput: () => cy.getElement('email'),
         getPasswordInput: () => cy.getElement('password'),

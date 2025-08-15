@@ -6,6 +6,7 @@ describe('Core functionality of the cart', ( ) => {
     beforeEach(() => {
         HomePage.navigate();
         HomePage.isVisible();
+        HomePage.navbar.isVisible();
     });
     it('should add an item to the cart', () => {
         HomePage.getProductByName('Combination Pliers')
@@ -16,12 +17,10 @@ describe('Core functionality of the cart', ( ) => {
         ProductPage.elements.getAddtoCartButton()
             .click();
         
-        cy.get('[data-test="cart-quantity"]')
-            .should('be.visible')
+        ProductPage.navbar.elements.getCartQuantity()
             .should('have.text', '1');
 
-        cy.get('[data-test="nav-cart"]')
-            .should('be.visible')
+        ProductPage.navbar.elements.getCartButton()
             .click();
 
         cy.url().should('include', '/checkout');

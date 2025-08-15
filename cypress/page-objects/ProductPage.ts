@@ -1,4 +1,8 @@
+import { Navbar } from "../components/Navbar";
+
 class ProductPage {
+    navbar = new Navbar();
+    
     elements = {
         getProductTitle: () => cy.getElement('product-name'),
         getProductDescription: () => cy.getElement('product-description'),

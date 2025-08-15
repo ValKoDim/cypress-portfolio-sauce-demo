@@ -1,4 +1,8 @@
+import { Navbar } from "../components/Navbar";
+
 class HomePage {
+    navbar = new Navbar();
+    
     elements = {
         getFilters: () => cy.getElement('filters'),
         getProductsContainer: () => cy.getElement(''),
