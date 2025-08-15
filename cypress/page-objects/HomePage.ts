@@ -2,7 +2,6 @@ import { Navbar } from "../components/Navbar";
 
 class HomePage {
     navbar = new Navbar();
-    
     elements = {
         getFilters: () => cy.getElement('filters'),
         getProductsContainer: () => cy.getElement(''),
@@ -24,7 +23,7 @@ class HomePage {
     }
 
     getProductByName(name: string) {
-    return cy.get('[data-test="product-name"]')
+    return cy.getElement('product-name')
       .filter((index, el) => el.textContent?.trim() === name)
       .closest('a.card')
       .should('be.visible');

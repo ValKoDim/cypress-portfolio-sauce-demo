@@ -1,8 +1,8 @@
 import HomePage from "../page-objects/HomePage";
 import ProductPage from "../page-objects/ProductPage";
+import CheckoutPage from "../page-objects/CheckoutPage";
 
 describe('Core functionality of the cart', ( ) => {
-    const baseUrl = Cypress.config('baseUrl');
     beforeEach(() => {
         HomePage.navigate();
         HomePage.isVisible();
@@ -23,15 +23,15 @@ describe('Core functionality of the cart', ( ) => {
         ProductPage.navbar.elements.getCartButton()
             .click();
 
-        cy.url().should('include', '/checkout');
+        CheckoutPage.isVisible();
               
-        cy.get('[data-test="product-title"]').eq(0)
+        CheckoutPage.elements.getProductsNames().eq(0)
             .should('be.visible')
             .invoke('text')
             .then(t=> t.trim())
             .should('eq', 'Combination Pliers');
 
-        cy.get('[data-test="product-quantity"]').eq(0)
+        CheckoutPage.elements.getProductsQuantities().eq(0)
             .should('be.visible')
             .should('have.value', '1');
     });
