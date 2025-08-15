@@ -1,10 +1,13 @@
+import HomePage from "../page-objects/HomePage";
+
 describe('Core functionality of the cart', ( ) => {
     const baseUrl = Cypress.config('baseUrl');
+    beforeEach(() => {
+        HomePage.navigate();
+        HomePage.isVisible();
+    });
     it('should add an item to the cart', () => {
-        cy.visit(baseUrl);
-
-        cy.get('[data-test="product-name"]')
-            .contains('Combination Pliers')
+        HomePage.getProductByName('Combination Pliers')
             .should('be.visible')
             .click();
         
