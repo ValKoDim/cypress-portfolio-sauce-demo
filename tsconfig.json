@@ -6,7 +6,8 @@
     "lib": ["es2020", "dom"],
     "types": ["cypress"],   
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": "https://practicesoftwaretesting.com/"
   },
    "include": ["**/*.ts", "**/*.d.ts"] 
 }

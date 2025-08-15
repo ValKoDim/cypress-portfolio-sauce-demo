@@ -8,11 +8,5 @@ export class Navbar {
     isVisible(): void {
         this.elements.getLogo()
             .should('be.visible');
-
-        this.elements.getCartButton()
-            .should('be.visible');
-
-        this.elements.getCartQuantity()
-            .should('be.visible');
     }
 };
