@@ -1,10 +1,10 @@
 class LoginPage {
     elements = {
-        getEmailInput: () => cy.get('[data-test="email"]'),
-        getPasswordInput: () => cy.get('[data-test="password"]'),
-        getLoginButton: () => cy.get('[data-test="login-submit"]'),
-        getTitle: () => cy.get('[data-test="page-title"]'),
-        getLoginError: () => cy.get('[data-test="login-error"]')
+        getEmailInput: () => cy.getElement('email'),
+        getPasswordInput: () => cy.getElement('password'),
+        getLoginButton: () => cy.getElement('login-submit'),
+        getTitle: () => cy.getElement('page-title'),
+        getLoginError: () => cy.getElement('login-error')
     }
 
     errorMessages = {

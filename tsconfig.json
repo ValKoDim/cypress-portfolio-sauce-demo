@@ -1,8 +1,12 @@
-{"compilerOptions":
-    {"target":"ES2020",
-    "module":"commonjs",
-    "types":["cypress"],
-    "lib":["es2020","dom"],
-    "baseUrl": "https://practicesoftwaretesting.com/"
-    }
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["es2020", "dom"],
+    "types": ["cypress"],   
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+   "include": ["**/*.ts", "**/*.d.ts"] 
 }
